@@ -1,0 +1,13 @@
+create table purchase(p_id int AUTO_INCREMENT PRIMARY KEY, name varchar(255), phone varchar(255), careOf varchar(255), ranges varchar(255), societyName varchar(255), type varchar(255), nature varchar(255), area varchar(255), areaUnit varchar(255), payment varchar(255), downPayment varchar(255), schedulePayment varchar(255), monthlyPayment varchar(255), floor varchar(255), floorOther varchar(255), room varchar(255), roomOther varchar(255), otherDetail varchar(5000), nearby varchar(5000), otherFacilities varchar(5000), healthFacilities varchar(5000),u_id varchar(255))
+
+
+
+create table sale (s_id int primary key auto_increment,sname varchar(255),sphoneNumber varchar(255),scareOf varchar(255),scompleteAddress varchar(255),ssocietyName varchar(255),stype varchar(255),sdemand varchar(255),snature varchar(255),sarea varchar(255),sareaDrop varchar(255),sdirection varchar(255),sfloor varchar(255),sfloorOther varchar(255),sroom varchar(255),sroomOther varchar(255),sdocument varchar(255),sdocumentOther varchar(255),sauthority varchar(255),sauthorityOther varchar(255),spayment varchar(255),spaymentOther1 varchar(255),spaymentOther2 varchar(255),spaymentOther3 varchar(255),spaymentOther4 varchar(255),sutility varchar(255),sproject varchar(255),sotherDetails varchar(5000),snearby varchar(5000),sotherFacilities varchar(5000),shealthFacilities varchar(5000),u_id varchar(255))
+
+
+create table required_rent(r_id int auto_increment primary key, rname varchar(255),rphoneNumber varchar(255),rcareOf varchar(255),rrange varchar(255),rsocietyName varchar(255),rarea varchar(255),rareaDrop varchar(255),rtype varchar(255),rfloor varchar(255),rfloorOther varchar(255),rroom varchar(255),rroomOther varchar(255),rOtherDetails varchar(5000),rnearby varchar(5000),rotherFacilities varchar(5000),rhealthFacilities varchar(5000))
+
+
+
+
+create table available_rent(a_id int auto_increment primary key,aname varchar(255),aphoneNumber varchar(255),acareOf varchar(255),acompleteAddress varchar(255),asocietyName varchar(255),atype varchar(255),aDemand varchar(255),anature varchar(255),aarea varchar(255),aareaDrop varchar(255),aDirection varchar(255),afloor varchar(255),afloorOther varchar(255),aroom varchar(255),aroomOther varchar(255),adocument varchar(255),adocumentOther varchar(255),aauthority varchar(255),aauthorityOther varchar(255),autility varchar(255),aProject varchar(255),aotherDetails varchar(5000),anearby varchar(5000),aotherFacilities varchar(5000),ahealthFacilities varchar(5000),u_id varchar(255) )

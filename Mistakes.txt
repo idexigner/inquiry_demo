@@ -1,0 +1,8 @@
+- purchase ki payment
+- guest he jar ha hai sb
+- submit pe view detail pe redirect kr rha hai
+
+- sale me data he ni aarha
+- availabale me b ni jara h
+
+
