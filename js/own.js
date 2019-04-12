@@ -375,7 +375,8 @@ function availableTwoResult() {
 
 function purchaseInsert() {
     
-    
+    var date = new Date();
+    date = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
 
 
     // var purchaseIdd = localStorage.getItem('purchaseIdJavascript');
@@ -485,6 +486,7 @@ function purchaseInsert() {
         method: 'POST',
         body: JSON.stringify({
             //   p_id: p_id,
+            date:date,
             name: name,
             phoneNumber: phoneNumber,
             careOf: careOf,
@@ -522,7 +524,7 @@ function purchaseInsert() {
         .then((responseJson) => {
             
             alert("Successfully Inserted");
-            alert(picName + uid + picNumber);
+           // alert(picName + uid + picNumber);
            // document.getElementById("purchasePicForm").submit();
              document.getElementById("pPicSubmit").click();
            // setTimeout(timeoutFunction() , 2000);
@@ -548,6 +550,9 @@ function availableInsert() {
     // var purchaseIdd = localStorage.getItem('purchaseIdJavascript');
     // var p_id='2';
     //var p_id=document.getElementById('purchaseUserId').innerHTML;
+    var date = new Date();
+    date = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
+
     var aname = document.getElementById("aname").value;
     var aphoneNumber = document.getElementById("aphoneNumber").value;
     var acareOf = document.getElementById("acareOf").value;
@@ -700,6 +705,7 @@ function availableInsert() {
         method: 'POST',
         body: JSON.stringify({
             //   p_id: p_id,
+            date: date,
             aname: aname,
             aphoneNumber: aphoneNumber,
             acareOf: acareOf,
@@ -769,6 +775,9 @@ function saleInsert() {
     // var purchaseIdd = localStorage.getItem('purchaseIdJavascript');
     // var p_id='2';
     //var p_id=document.getElementById('purchaseUserId').innerHTML;
+    var date = new Date();
+    date = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
+
     var sname = document.getElementById("sname").value;
     var sphoneNumber = document.getElementById("sphoneNumber").value;
     var scareOf = document.getElementById("scareOf").value;
@@ -935,6 +944,7 @@ function saleInsert() {
         method: 'POST',
         body: JSON.stringify({
             //   p_id: p_id,
+            date: date,
             sname: sname,
             sphoneNumber: sphoneNumber,
             scareOf: scareOf,
@@ -996,6 +1006,8 @@ function saleInsert() {
 
 function requireInsert() {
 
+    var date = new Date();
+    date = date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
 
 
     // var purchaseIdd = localStorage.getItem('purchaseIdJavascript');
@@ -1089,6 +1101,7 @@ function requireInsert() {
         method: 'POST',
         body: JSON.stringify({
             //   p_id: p_id,
+            date:date,
             rname: rname,
             rphoneNumber: rphoneNumber,
             rcareOf: rcareOf,

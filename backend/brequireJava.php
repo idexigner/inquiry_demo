@@ -10,6 +10,7 @@ include 'DBConfig.php';
 	 $obj = json_decode($json,true);
 
     // $p_id = $obj['p_id'];
+     $date = $obj['date'];
      $rname = $obj['rname'];
      $rphoneNumber = $obj['rphoneNumber'];
      $rcareOf = $obj['rcareOf'];
@@ -39,7 +40,7 @@ include 'DBConfig.php';
 	// $result= $con->query("update purchase set name='$pname' where p_id='$p_id'");
 
 
-    $result= $con->query("insert into required_rent(rname,rphoneNumber,rcareOf,rrange,rsocietyName,rarea,rareaDrop,rtype,rfloor,rfloorOther,rroom,rroomOther,rOtherDetails,rnearby,rotherFacilities,rhealthFacilities,rpicName,rpicNumber,u_id) values ('$rname','$rphoneNumber','$rcareOf','$rrange','$rsocietyName','$rarea','$rareaValue','$rtype','$rfloorValue','$rfloorOther','$rroom','$rroomOtherText','$rotherDetails','$rnearby','$rotherFacilites','$rhealthFacilites','$rpicName','$rpicNumber','$uid')");
+    $result= $con->query("insert into required_rent(date,rname,rphoneNumber,rcareOf,rrange,rsocietyName,rarea,rareaDrop,rtype,rfloor,rfloorOther,rroom,rroomOther,rOtherDetails,rnearby,rotherFacilities,rhealthFacilities,rpicName,rpicNumber,u_id) values ('$date','$rname','$rphoneNumber','$rcareOf','$rrange','$rsocietyName','$rarea','$rareaValue','$rtype','$rfloorValue','$rfloorOther','$rroom','$rroomOtherText','$rotherDetails','$rnearby','$rotherFacilites','$rhealthFacilites','$rpicName','$rpicNumber','$uid')");
 	
     if($result){
 				echo json_encode("Success");

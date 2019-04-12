@@ -10,6 +10,7 @@ include 'DBConfig.php';
 	 $obj = json_decode($json,true);
 
     // $p_id = $obj['p_id'];
+     $date = $obj['date'];
      $aname = $obj['aname'];
      $aphoneNumber = $obj['aphoneNumber'];
      $acareOf = $obj['acareOf'];
@@ -42,7 +43,7 @@ include 'DBConfig.php';
 	// $result= $con->query("update purchase set name='$pname' where p_id='$p_id'");
 
 
-    $result= $con->query("insert into available_rent(aname,aphoneNumber,acareOf,acompleteAddress,asocietyName,atype,aDemand,anature,aarea,aareaDrop,aDirection,afloor,afloorOther,aroom,aroomOther,adocument,aauthority,autility,aProject,aotherDetails,anearby,aotherFacilities,ahealthFacilities,aDues,apicName,apicNumber,u_id) values ('$aname','$aphoneNumber','$acareOf','$acompleteAddress','$asocietyName','$atype','$aDemand','$anature','$aarea','$aareaValue','$aDirectionValue','$afloorValue','$afloorOther','$aroom','$aroomOther','$adocument','$aauthority','$autility','$aProject','$aotherDetails','$anearby','$aotherFacilites','$ahealthFacilites','$aDues','$apicName','$apicNumber','$uid')");
+    $result= $con->query("insert into available_rent(date,aname,aphoneNumber,acareOf,acompleteAddress,asocietyName,atype,aDemand,anature,aarea,aareaDrop,aDirection,afloor,afloorOther,aroom,aroomOther,adocument,aauthority,autility,aProject,aotherDetails,anearby,aotherFacilities,ahealthFacilities,aDues,apicName,apicNumber,u_id) values ('$date','$aname','$aphoneNumber','$acareOf','$acompleteAddress','$asocietyName','$atype','$aDemand','$anature','$aarea','$aareaValue','$aDirectionValue','$afloorValue','$afloorOther','$aroom','$aroomOther','$adocument','$aauthority','$autility','$aProject','$aotherDetails','$anearby','$aotherFacilites','$ahealthFacilites','$aDues','$apicName','$apicNumber','$uid')");
 	
     if($result){
 				echo json_encode("Success");

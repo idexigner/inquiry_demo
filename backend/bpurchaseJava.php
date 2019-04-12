@@ -10,6 +10,7 @@ include 'DBConfig.php';
 	 $obj = json_decode($json,true);
 
     // $p_id = $obj['p_id'];
+    $date = $obj['date'];
      $name = $obj['name'];
      $phoneNumber = $obj['phoneNumber'];
      $careOf = $obj['careOf'];
@@ -39,7 +40,7 @@ include 'DBConfig.php';
 	// $result= $con->query("update purchase set name='$pname' where p_id='$p_id'");
 
 
-    $result= $con->query("insert into purchase(name , phone , careOf , ranges , societyName , type , nature , area , areaUnit , payment , downPayment , schedulePayment , monthlyPayment , floor , floorOther , room , roomOther , otherDetail , nearby , otherFacilities , healthFacilities,picName,picNumber,u_id) values('$name','$phoneNumber','$careOf','$range','$societyName','$type','$nature','$area','$areaValue','$payment','$down','$schedulePeriod','$monthly','$floorValue','$floorOther','$room','$roomOther','$otherDetails','$nearby','$otherFacilites','$healthFacilites','$picName','$picNumber','$uid')");
+    $result= $con->query("insert into purchase(date,name , phone , careOf , ranges , societyName , type , nature , area , areaUnit , payment , downPayment , schedulePayment , monthlyPayment , floor , floorOther , room , roomOther , otherDetail , nearby , otherFacilities , healthFacilities,picName,picNumber,u_id) values('$date','$name','$phoneNumber','$careOf','$range','$societyName','$type','$nature','$area','$areaValue','$payment','$down','$schedulePeriod','$monthly','$floorValue','$floorOther','$room','$roomOther','$otherDetails','$nearby','$otherFacilites','$healthFacilites','$picName','$picNumber','$uid')");
 	
     if($result){
 				echo json_encode("Success");

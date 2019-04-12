@@ -10,6 +10,7 @@ include 'DBConfig.php';
 	 $obj = json_decode($json,true);
 
     // $p_id = $obj['p_id'];
+     $date = $obj['date'];
      $sname = $obj['sname'];
      $sphoneNumber = $obj['sphoneNumber'];
      $scareOf = $obj['scareOf'];
@@ -43,7 +44,7 @@ include 'DBConfig.php';
 	// $result= $con->query("update purchase set name='$pname' where p_id='$p_id'");
 
 
-    $result= $con->query("insert into sale(sname ,sphoneNumber ,scareOf ,scompleteAddress  ,ssocietyName  ,stype  ,sdemand,snature  ,sarea  ,sareaDrop  ,sdirection  ,sfloor  ,sfloorOther  ,sroom  ,sroomOther  ,sdocument   ,sauthority    ,spayment  ,spaymentOther1  ,sutility  ,sproject  ,sotherDetails  ,snearby  ,sotherFacilities  ,shealthFacilities,spicName,spicNumber  ,u_id ) values ('$sname','$sphoneNumber','$scareOf','$scompleteAddress','$SsocietyName','$stype','$sDemand','$snature','$sarea','$sareaDropValue','$sDirectionValue','$sfloorDropValue','$sfloorCheckOther','$sroom','$sroomOther','$sdocument','$sauthority','$spayment','$spaymentOtherText','$sutility','$sProject','$sotherDetails','$snearby','$sotherFacilites','$shealthFacilites','$spicName','$spicNumber','$uid')");
+    $result= $con->query("insert into sale(date,sname ,sphoneNumber ,scareOf ,scompleteAddress  ,ssocietyName  ,stype  ,sdemand,snature  ,sarea  ,sareaDrop  ,sdirection  ,sfloor  ,sfloorOther  ,sroom  ,sroomOther  ,sdocument   ,sauthority    ,spayment  ,spaymentOther1  ,sutility  ,sproject  ,sotherDetails  ,snearby  ,sotherFacilities  ,shealthFacilities,spicName,spicNumber  ,u_id ) values ('$date','$sname','$sphoneNumber','$scareOf','$scompleteAddress','$SsocietyName','$stype','$sDemand','$snature','$sarea','$sareaDropValue','$sDirectionValue','$sfloorDropValue','$sfloorCheckOther','$sroom','$sroomOther','$sdocument','$sauthority','$spayment','$spaymentOtherText','$sutility','$sProject','$sotherDetails','$snearby','$sotherFacilites','$shealthFacilites','$spicName','$spicNumber','$uid')");
 	
     if($result){
 				echo json_encode("Success");
