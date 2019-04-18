@@ -399,6 +399,7 @@
 
         <input type="text" name="picName" id="rPicName" style="display:none">
         <input type="text" name="userId" id="rUserId" style="display:none">
+        <input type="text" name="refillChk" id="rrefillChk" style="display:none">
         <!-- <input type="button" onclick="" class="button" style="display:none" value="Upload" -->
 
        <input type='submit' name='submit' id="rPicSubmit" value='Upload' style="display:none">

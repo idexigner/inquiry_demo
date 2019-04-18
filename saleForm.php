@@ -608,6 +608,7 @@
 
         <input type="text" name="picName" id="sPicName" style="display:none">
         <input type="text" name="userId" id="sUserId" style="display:none">
+        <input type="text" name="refillChk" id="srefillChk" style="display:none">
        
 
        <input type='submit' name='submit' id="sPicSubmit" value='Upload' style="display:none">

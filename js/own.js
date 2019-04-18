@@ -6,6 +6,7 @@ const Api = "http://localhost/inquiry_demo/";
 //   }
 
 var uid = '';
+var uUrl='';
 
 $("input[name='type']").click(function () {
     $('#typeOther').css('display', ($(this).val() === 'other') ? 'block' : 'none');
@@ -143,10 +144,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
 $("input[name='atype']").click(function () {
     $('#atypeOther').css('display', ($(this).val() === 'other') ? 'block' : 'none');
 });
@@ -184,35 +181,6 @@ $("input[name='aauthority']").click(function () {
 
 
 
-
-
-//  $("input[name='spayment']").click(function () {
-//     $('#spaymentOther').css('display', ($(this).val() === 'installment') ? 'block':'none');
-// });
-
-
-// function showRoom(){
-//      document.getElementById('roomOther').style.display ='block';
-
-
-//     // if(document.getElementById('roomOther').style.display ='block')
-//     // {
-//     //     document.getElementById('roomOther').style.display ='none';
-//     // }
-//     // else{
-//     //     document.getElementById('roomOther').style.display ='block';
-//     // }    
-
-//   }
-
-// $("#floorCheck").click(function () {
-//     $('#floorOther').css('display', ($(this).val() === 'other') ? 'block':'none');
-//     // $('#floorOther').css('display', ($(this).val() === 'other') ? 'none':'block');
-// });
-
-// $("input[name='room']").click(function () {
-//     $('#roomOther').css('display', ($(this).val() === 'other') ? 'block':'none');
-// });
 
 
 
@@ -473,7 +441,7 @@ function purchaseInsert() {
     // alert(picName);
 
     document.getElementById("pPicName").value = picName;
-    document.getElementById("pUserId").value = uid;
+    document.getElementById("pUserId").value = uUrl;
     var picNumber = document.getElementById("pfileName").files.length;
 
     
@@ -524,21 +492,32 @@ function purchaseInsert() {
         .then((responseJson) => {
             
             alert("Successfully Inserted");
-           // alert(picName + uid + picNumber);
-           // document.getElementById("purchasePicForm").submit();
-             document.getElementById("pPicSubmit").click();
-           // setTimeout(timeoutFunction() , 2000);
-            
 
-
+            var resultAsk = confirm("Would you like to refill the Form");
+      
+           if(resultAsk){
+            document.getElementById("prefillChk").value = "yes";
+           }
+           else{
+            document.getElementById("prefillChk").value = "no";
+           }
+            document.getElementById("pPicSubmit").click();
+           
+           
             // console.log(responseJson);
         })
+        // .then(() => {
+        //     var resultAsk = confirm("Would you like to refill the Form");
+        //     afterSubmission(resultAsk);
+        // })
         .catch((error) => {
             alert("Not Updated");
             //window.location.href = "/onesource_admin/viewDetails.php";
             // console.error(error);
         });
 
+
+    // timeoutFunction();
 
 }
 
@@ -746,7 +725,18 @@ function availableInsert() {
         .then((responseJson) => {
 
             alert("Successfully Inserted");
-            alert(picName + uid + picNumber);
+            // alert(picName + uid + picNumber);
+
+            var resultAsk = confirm("Would you like to refill the Form");
+      
+            if(resultAsk){
+             document.getElementById("arefillChk").value = "yes";
+            }
+            else{
+             document.getElementById("arefillChk").value = "no";
+            }
+
+
             document.getElementById("aPicSubmit").click();
             // var result = confirm("Would youlike to refill the Form");
             // afterSubmission(result);
@@ -988,6 +978,15 @@ function saleInsert() {
 
             
             alert("Successfully Inserted");
+            var resultAsk = confirm("Would you like to refill the Form");
+      
+            if(resultAsk){
+             document.getElementById("srefillChk").value = "yes";
+            }
+            else{
+             document.getElementById("srefillChk").value = "no";
+            }
+
             document.getElementById("sPicSubmit").click();
 
 
@@ -1139,6 +1138,15 @@ function requireInsert() {
         .then((responseJson) => {
 
             alert("Successfully Inserted");
+
+            var resultAsk = confirm("Would you like to refill the Form");
+      
+            if(resultAsk){
+             document.getElementById("rrefillChk").value = "yes";
+            }
+            else{
+             document.getElementById("rrefillChk").value = "no";
+            }
             document.getElementById("rPicSubmit").click();
             // var result = confirm("Would youlike to refill the Form");
             // afterSubmission(result);
@@ -1156,7 +1164,38 @@ function requireInsert() {
 }
 
 function onLoadFunction(){
+
     uid = document.getElementById("uid").value;
+    uUrl= document.getElementById("uid").value;
+
+
+ 
+    fetch(Api + 'backend/userId.php', {
+        method: 'POST',
+        body: JSON.stringify({
+            uid: uid
+        }),
+        headers: new Headers({
+            'Content-Type': 'application/json',
+        })
+    })
+        .then((response) => response.json())
+        .then((responseJson) => {
+            if (responseJson === "Wrong Details") {
+                alert(responseJson);
+                location.replace("http://www.1sourceestate.com");
+            }
+            else {
+                uid= responseJson[0].u_id;
+               
+            }
+        })
+        .catch((error) => {
+            // console.error(error);
+            alert('Failed');
+            location.replace("http://www.1sourceestate.com");
+        });
+
 }
 function timeoutFunction(){
    // alert("reached timeut");
@@ -1165,10 +1204,25 @@ function timeoutFunction(){
             afterSubmission(result);
 }
 function afterSubmission(result){
+    alert(uUrl);
+    
     if(result){
-        window.location.href = "http://1sourceestate.com/inquiry_demo?uid="+uid;
+        window.location.href = "http://1sourceestate.com/inquiry_demo?uidUrl="+uUrl;
     }
     else{
-        window.location.href = "http://1sourceestate.com/";
+        if(uUrl == '37429861'){
+            window.location.href = "http://1sourceestate.com/";
+        }
+        else{
+            if(window.location.href.includes("localhost")){
+                location.replace("http://localhost/onesource_admin/index.php");
+
+            }
+            else{
+                location.replace("http://www.1sourceestate.com/onesource_admin/index.php");
+
+            }
+        }
+        
     }
 }

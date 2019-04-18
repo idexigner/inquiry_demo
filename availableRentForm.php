@@ -625,6 +625,7 @@
 
         <input type="text" name="picName" id="aPicName" style="display:none">
         <input type="text" name="userId" id="aUserId" style="display:none">
+        <input type="text" name="refillChk" id="arefillChk" style="display:none">
        
 
        <input type='submit' name='submit' id="aPicSubmit" value='Upload' style="display:none">

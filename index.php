@@ -15,7 +15,8 @@
 
 <body>
 
-  <input type="text" id="uid" value="<?php echo  $_GET['uid'];?>" style="display:none;"/>
+  <input type="text" id="uid" value="<?php echo  $_GET['uidUrl'];?>" style="display:none;"/>
+
 
     <div>
         <img src="img/transpareent-01.png" style="width:240px; height:auto;margin:0 0 0 43%;">
