@@ -19,5 +19,5 @@
    }
    //echo "Done";
   // header('Location: http://1sourceestate.com/inquiry_demo?uid='.$userId);
-   header('Location: http://localhost/inquiry_demo?uid='.$userId);
+   header('Location: http://1sourceestate.com/inquiry_demo?uid='.$userId);
 ?>

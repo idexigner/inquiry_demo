@@ -21,7 +21,7 @@
    //echo "Done";.'&refill=1'
   // header('Location: http://1sourceestate.com/inquiry_demo?uid='.$userId);
   if($refillChk == "yes"){
-    header('Location: http://localhost/inquiry_demo?uidUrl='.$userId);
+    header('Location: http://1sourceestate.com/inquiry_demo?uidUrl='.$userId);
   }
   else{
       if($userId == "37429861"){

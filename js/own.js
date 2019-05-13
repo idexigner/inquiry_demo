@@ -1,6 +1,11 @@
-//const Api="http://1sourceestate.com/inquiry_demo/";
-const Api = "http://localhost/inquiry_demo/";
+//const 
 
+if(window.location.href.includes("localhost")){
+    Api = "http://localhost/inquiry_demo/";
+}
+else{
+    Api="http://1sourceestate.com/inquiry_demo/";
+}
 //   function show2(){
 //     document.getElementById('div1').style.display = 'block';
 //   }
@@ -493,7 +498,7 @@ function purchaseInsert() {
             
             alert("Successfully Inserted");
 
-            var resultAsk = confirm("Would you like to refill the Form");
+            var resultAsk = confirm("Would you like to submit another Inquiry");
       
            if(resultAsk){
             document.getElementById("prefillChk").value = "yes";
@@ -727,7 +732,7 @@ function availableInsert() {
             alert("Successfully Inserted");
             // alert(picName + uid + picNumber);
 
-            var resultAsk = confirm("Would you like to refill the Form");
+            var resultAsk = confirm("Would you like to submit another Inquiry");
       
             if(resultAsk){
              document.getElementById("arefillChk").value = "yes";
@@ -978,7 +983,7 @@ function saleInsert() {
 
             
             alert("Successfully Inserted");
-            var resultAsk = confirm("Would you like to refill the Form");
+            var resultAsk = confirm("Would you like to submit another Inquiry");
       
             if(resultAsk){
              document.getElementById("srefillChk").value = "yes";
@@ -1139,7 +1144,7 @@ function requireInsert() {
 
             alert("Successfully Inserted");
 
-            var resultAsk = confirm("Would you like to refill the Form");
+            var resultAsk = confirm("Would you like to submit another Inquiry");
       
             if(resultAsk){
              document.getElementById("rrefillChk").value = "yes";
@@ -1200,7 +1205,7 @@ function onLoadFunction(){
 function timeoutFunction(){
    // alert("reached timeut");
   
-    var result = confirm("Would youlike to refill the Form");
+    var result = confirm("Would you like to submit another Inquiry");
             afterSubmission(result);
 }
 function afterSubmission(result){
